@@ -1,0 +1,60 @@
+{
+	"name": "effectnode-graph-vsce",
+	"displayName": "EffectNode Visual Programming",
+	"description": "EffectNode - Production Ready Visual Programming",
+	"version": "0.0.10",
+	"publisher": "effectnode",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCustomEditor:effectnode.graph"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wonglok/effectnode-graph-vsce"
+	},
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "effectnode.graph",
+				"displayName": "EffectNode Graph Editro",
+				"selector": [
+					{
+						"filenamePattern": "*.effectnode.json"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"par": "parcel build ./gui/*.jsx --out-dir ./media/gui-out",
+		"dev": "nodemon --exec \"parcel build ./gui/*.jsx --out-dir ./media/gui-out\" ./gui/* --no-source-maps",
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -w -p ./",
+		"pack": "vsce package"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.46.0",
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"typescript": "^4.0.2"
+	},
+	"icon": "effectnode.png",
+	"dependencies": {
+		"lodash": "^4.17.19",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-three-fiber": "^5.3.10",
+		"three": "^0.124.0",
+		"zustand": "^3.2.0"
+	}
+}
