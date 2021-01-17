@@ -74,7 +74,7 @@ export function LineItem({ line }) {
     scene.getObjectByName(`${'output'}${line.from}`).getWorldPosition(to)
     scene.getObjectByName(`${'input'}${line.to}`).getWorldPosition(from)
 
-    const VERTICAL_HEIGHT = getDist([from, to]) * 0.2
+    const VERTICAL_HEIGHT = getDist([from, to]) * 0.25
 
     const curve = new CatmullRomCurve3([
       new Vector3(

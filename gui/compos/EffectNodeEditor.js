@@ -12,17 +12,20 @@ import { Floor } from './Floor'
 import { HandyLine } from './HandyLine'
 // import UndoManager from 'undo-manager'
 
-function ENScene({ initState = {}, onSave = () => {}, onAutoSave = () => {}, children }) {
+function ENScene ({ initState = {}, onSave = () => {}, onAutoSave = () => {}, children }) {
   const MapControls = require('three/examples/jsm/controls/OrbitControls').MapControls
   const boxes = useEffectNode(s => s.boxes)
   const lines = useEffectNode(s => s.lines)
   const set = useEffectNode(s => s.set)
   const get = useEffectNode(s => s.get)
+
   const handBoxID = useEffectNode(s => s.handBoxID)
   const handSlotType = useEffectNode(s => s.handSlotType)
   const handMode = useEffectNode(s => s.handMode)
+
   const groupRef = useRef()
   const controls = useRef()
+
   const { gl, camera, scene } = useThree()
 
   const bus = useMemo(() => {

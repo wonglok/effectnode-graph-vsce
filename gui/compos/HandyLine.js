@@ -35,6 +35,7 @@ export function HandyLine ({ bus }) {
   const PointCount = 75
 
   const boxes = useEffectNode(s => s.boxes)
+
   const mouse = useRef({ pos: [0, 0, 0] })
   useEffect(() => {
     let h = {
