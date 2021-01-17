@@ -1,0 +1,5 @@
+{
+	"exec": "parcel build ./gui/main.js --out-dir ./media/gui-out/ --no-source-maps",
+	"watch": ["./gui/", "./gui/compos/"],
+	"legacy-watch": true
+}
